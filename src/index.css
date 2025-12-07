@@ -1,0 +1,186 @@
+/* -------------------------------------------
+   GLOBAL DESIGN SYSTEM
+------------------------------------------- */
+:root {
+  --bg: #f7f7f7;
+  --text: #333;
+  --card-bg: #ffffff;
+  --border: #ddd;
+  --radius: 10px;
+
+  --primary: #646cff;
+  --primary-hover: #4d54d0;
+
+  --danger: #e74c3c;
+  --danger-hover: #c0392b;
+
+  --shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* -------------------------------------------
+   BODY & LAYOUT
+------------------------------------------- */
+body {
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  background: var(--bg);
+}
+
+.container {
+  width: 900px;
+  background: var(--card-bg);
+  padding: 40px 50px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* -------------------------------------------
+   HEADINGS
+------------------------------------------- */
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+/* -------------------------------------------
+   FORM
+------------------------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 35px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
+}
+
+/* -------------------------------------------
+   BUTTONS
+------------------------------------------- */
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+button.delete {
+  background: var(--danger);
+}
+
+button.delete:hover {
+  background: var(--danger-hover);
+}
+
+/* -------------------------------------------
+   TABLE
+------------------------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background: #f3f3f3;
+  font-weight: 600;
+}
+
+tr:hover {
+  background: #fafafa;
+}
+
+/* -------------------------------------------
+   IMAGES
+------------------------------------------- */
+img {
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+/* -------------------------------------------
+   DARK MODE SUPPORT
+------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e1e1e;
+    --text: #eaeaea;
+    --card-bg: #2a2a2a;
+    --border: #444;
+  }
+
+  th {
+    background: #3a3a3a;
+  }
+
+  tr:hover {
+    background: #333;
+  }
+}
+
+/* -------------------------------------------
+   RESPONSIVE
+------------------------------------------- */
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 8px 14px;
+  }
+}
